@@ -4,18 +4,8 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="usermodel name">
 		<content>
-		    <List items = "{myAccounts>/accounts}">
-		        <CustomListItem>
-		            <content>
-		                <Panel class='accountPanel' expandable = 'true'>
-		                    <content>
-		                        <VBox>
-		                            <Text text="Summary"></Text>
-		                        </VBox>
-		                    </content>
-		                </Panel>
-		            </content>
-		        </CustomListItem>
+		    <List>
+		       
 		    </List>
 		</content>
 	</Page>
