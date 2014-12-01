@@ -2,9 +2,16 @@
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m" controllerName="view.desktop.accountDetails" 
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Title">
+	<Page title="Selected Company">
 		<content>
-		
+		<VBox>
+		    <Text text='Company Summary to go here' height='35%'></Text>
+		    <HBox class='buttonBar'>
+		        <Button text='News Reports'></Button>
+		        <Button text='Financial Reports'></Button>
+		    </HBox>
+		</VBox>
+		   
 		</content>
 	</Page>
 </core:View>

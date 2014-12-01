@@ -1,4 +1,5 @@
 (function() { 
+
         var myAccounts = {
             accounts:[
                 {
@@ -39,5 +40,5 @@
         //logged in user and the accounts directly assigned to them, 
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(myAccounts),'myAccounts');
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(userModel),'userModel' );
-      
+    
    })();
