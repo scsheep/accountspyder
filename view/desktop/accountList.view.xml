@@ -2,9 +2,14 @@
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m" controllerName="view.desktop.accountList" 
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Title">
+	<Page>
 		<content>
-		
+		<List items = '{myAccounts>/accounts}' class='companyList'>
+		    <StandardListItem title='{myAccounts>accountName}' type='Navigation' press='navigateCompany'>
+		        
+		    </StandardListItem>
+		       
+		    </List>
 		</content>
 	</Page>
 </core:View>

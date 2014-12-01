@@ -5,34 +5,11 @@ sap.ui.controller("view.desktop.accountList", {
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf accountSpyder.view.desktop.accountList
 */
-//	onInit: function() {
-//
-//	},
+// 	onInit: function() {
 
-/**
-* Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-* (NOT before the first rendering! onInit() is used for that one!).
-* @memberOf accountSpyder.view.desktop.accountList
-*/
-//	onBeforeRendering: function() {
-//
-//	},
-
-/**
-* Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-* This hook is the same one that SAPUI5 controls get after being rendered.
-* @memberOf accountSpyder.view.desktop.accountList
-*/
-//	onAfterRendering: function() {
-//
-//	},
-
-/**
-* Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-* @memberOf accountSpyder.view.desktop.accountList
-*/
-//	onExit: function() {
-//
-//	}
+// 	},
+navigateCompany:function(){
+    
+}
 
 });

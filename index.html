@@ -12,7 +12,7 @@
 				data-sap-ui-xx-bindingSyntax="complex">
 		</script>
 		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
-		
+		<script src='../js/setup.js'></script>
 		
 		<script>
 	            sap.ui.localResources('view')
@@ -28,7 +28,7 @@
 				    var masterPage = sap.ui.view({id:"idMasterPage", viewName:"view.desktop.accountList", type:sap.ui.core.mvc.ViewType.XML});
 				    app.addDetailPage(detailPage);
 				    app.addMasterPage(masterPage);
-				     app.placeAt("content");
+				    app.placeAt("content");
 				}
 		</script>
 		
