@@ -49,7 +49,7 @@ sap.ui.controller("view.mobile.accountList", {
         
 	},
 	navigateCompany:function(){
-	
+	alert('click');
 	}
 
 

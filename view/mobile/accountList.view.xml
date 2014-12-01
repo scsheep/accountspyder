@@ -4,7 +4,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="{userModel>/surname}, {userModel>/firstName}">
 		<content>
-		    <List items = '{myAccounts>/accounts}'>
+		    <List items = '{myAccounts>/accounts}' class='companyList'>
 		    <CustomListItem type='Navigation' press='navigateCompany'>
 		        <Panel expandable="true" headerText="{myAccounts>accountName}" class="companyPanel">
 		            <VBox>
