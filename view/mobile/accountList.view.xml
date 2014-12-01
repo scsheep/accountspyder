@@ -2,9 +2,21 @@
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m" controllerName="view.mobile.accountList" 
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Title">
+	<Page title="usermodel name">
 		<content>
-		
+		    <List items = "{myAccounts>/accounts}">
+		        <CustomListItem>
+		            <content>
+		                <Panel class='accountPanel' expandable = 'true'>
+		                    <content>
+		                        <VBox>
+		                            <Text text="Summary"></Text>
+		                        </VBox>
+		                    </content>
+		                </Panel>
+		            </content>
+		        </CustomListItem>
+		    </List>
 		</content>
 	</Page>
 </core:View>
