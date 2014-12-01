@@ -2,9 +2,29 @@
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m" controllerName="view.mobile.accountList" 
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="usermodel name">
+	<Page title="{userModel>/surname}, {userModel>/firstName}">
 		<content>
-		    <List>
+		    <List items = '{myAccounts>/accounts}'>
+		    <CustomListItem type='Navigation' press='navigateCompany'>
+		        <Panel expandable="true" headerText="{myAccounts>accountName}" class="companyPanel">
+		            <VBox>
+		               <items>
+		                    <HBox>
+		                       <Text class='companyLabel' text="Last Worked"/>
+		                       <Text class='companyInfo' text="{myAccounts>lastWorked}"/>
+		                   </HBox>
+		                   <HBox>
+		                       <Text class='companyLabel' text="Total Pipeline"/>
+		                       <Text class='companyInfo' text="{myAccounts>totalPipeline}"/>
+		                   </HBox>
+		                   <HBox>
+		                       <Text class='companyLabel' text="Remaining Pipeline"/>
+		                       <Text class='companyInfo' text="{myAccounts>pipeLineRemaining}"/>
+		                   </HBox>
+		               </items>
+		            </VBox>
+		        </Panel>
+		    </CustomListItem>
 		       
 		    </List>
 		</content>
