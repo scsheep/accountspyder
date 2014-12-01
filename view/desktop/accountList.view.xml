@@ -5,7 +5,7 @@
 	<Page>
 		<content>
 		<List items = '{myAccounts>/accounts}' class='companyList'>
-		    <StandardListItem title='{myAccounts>accountName}' type='Navigation' press='navigateCompany'>
+		    <StandardListItem title='{myAccounts>accountName}' class="deskTopList" type='Navigation' press='navigateCompany'>
 		        
 		    </StandardListItem>
 		       

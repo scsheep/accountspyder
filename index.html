@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
-        <script src="data.js"></script>
+      
 		<script src="resources/sap-ui-core.js"
 				id="sap-ui-bootstrap"
 				data-sap-ui-libs="sap.m"
@@ -18,11 +18,14 @@
 	            sap.ui.localResources('view')
 				//TODO : device based switch here will change between the split app or the app. 
 				if(!sap.ui.Device.system.desktop){
+				    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/mobile.css') );
+
                     var app = new sap.m.App({initialPage:"idmobileMain"});
 				    var page = sap.ui.view({id:"idmobileMain", viewName:"view.mobile.accountList", type:sap.ui.core.mvc.ViewType.XML});
 				    app.addPage(page);
 				    app.placeAt("content");
 				}else{
+				    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/desktop.css') );
 				    var app = new sap.m.SplitApp();
 				    var detailPage = sap.ui.view({id:"idDetailPage", viewName:"view.desktop.accountDetails", type:sap.ui.core.mvc.ViewType.XML});
 				    var masterPage = sap.ui.view({id:"idMasterPage", viewName:"view.desktop.accountList", type:sap.ui.core.mvc.ViewType.XML});
