@@ -3,8 +3,6 @@
     background-color:green; /*The back ground color will be driven by a less mix for each element and set by ID*/
 }
 
-
-
 .deskTopList{
   background-image:url("../image/ListBackground.png");
   background-size: 100% 100%;
@@ -16,7 +14,7 @@
     
 }
 
-.sap-desktop .sapMLIBSelectD:hover:not(:active), .sap-desktop .sapMLIB:not(.sapMLIBActive):not(.sapMLIBTypeInactive):not(.sapMLIBTypeDetail):not(.sapMALI):hover, .sap-desktop .sapMListUl:not(.sapMListModeDelete):not(.sapMListModeNone) .sapMLIB:not(.sapMLIBActive):not(.sapMALI):hover, .sap-desktop .sapMLIB:not(.sapMLIBActive):not(.sapMLIBSelected):not(.sapMLIBTypeInactive):not(.sapMLIBTypeDetail):not(.sapMALI):hover>td, .sap-desktop .sapMLIB:not(.sapMLIBActive):not(.sapMLIBTypeInactive):not(.sapMLIBTypeDetail):not(.sapMALI):not(.sapMLIBSelected):hover + .sapMListTblSubRow, .sap-desktop .sapMListTblSubRow:not(.sapMLIBActive):not(.sapMLIBTypeInactive):not(.sapMLIBTypeDetail):not(.sapMALI):hover{
-    background-size:100% 2%;
-    background-color:green;
+.hover{
+    color:red;
 }
+

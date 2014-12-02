@@ -7,23 +7,23 @@
 		<VBox>
 		    <Text text='Company Summary to go here' height='35%'></Text>
 		    <IconTabBar
-                id="idIconTabBar"
-                select="handleIconTabBarSelect">
-                <items>
-                  <IconTabFilter
-                    icon="sap-icon://newspaper"
-                    iconColor="Positive"
-                    count="new stories"
-                    text="News Reports"
-                    key="News" />
-                  <IconTabFilter
-                    icon="sap-icon://compare"
-                    iconColor="Critical"
-                    count="date updated"
-                    text="Financial Reports"
-                    key="Financial" />
-                </items>
-              </IconTabBar>
+            class="iconTabBarPaddingTop"
+            id="idIconTabBarMulti"
+            >
+            <items>
+              <IconTabFilter
+                id="newsIcon"
+                icon="sap-icon://newspaper">
+                <Text text="Fragment will go here for the news reports" />
+              </IconTabFilter>
+              <IconTabFilter
+                id="finIcon"
+                icon="sap-icon://line-chart">
+                <Text text="Attachments go here ..." />
+              </IconTabFilter>
+              
+            </items>
+          </IconTabBar>
 		</VBox>
 		   
 		</content>

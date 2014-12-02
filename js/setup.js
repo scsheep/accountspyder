@@ -38,7 +38,6 @@
         };
         //setup function for the model in the final app this is where we will call C4C to obtain 
         //logged in user and the accounts directly assigned to them, 
-        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(myAccounts),'myAccounts');
-        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(userModel),'userModel' );
-    
-   })();
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(myAccounts),"myAccounts" );
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(userModel),"userModel" );
+    })();
