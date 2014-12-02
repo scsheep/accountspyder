@@ -6,10 +6,24 @@
 		<content>
 		<VBox>
 		    <Text text='Company Summary to go here' height='35%'></Text>
-		    <HBox class='buttonBar'>
-		        <Button text='News Reports'></Button>
-		        <Button text='Financial Reports'></Button>
-		    </HBox>
+		    <IconTabBar
+                id="idIconTabBar"
+                select="handleIconTabBarSelect">
+                <items>
+                  <IconTabFilter
+                    icon="sap-icon://newspaper"
+                    iconColor="Positive"
+                    count="new stories"
+                    text="News Reports"
+                    key="News" />
+                  <IconTabFilter
+                    icon="sap-icon://compare"
+                    iconColor="Critical"
+                    count="date updated"
+                    text="Financial Reports"
+                    key="Financial" />
+                </items>
+              </IconTabBar>
 		</VBox>
 		   
 		</content>
