@@ -13,9 +13,10 @@
 		</script>
 		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
 		<script src='../js/setup.js'></script>
-		
 		<script>
+		        
 	            sap.ui.localResources('view')
+	            sap.ui.localResources("fragments");  
 				//TODO : device based switch here will change between the split app or the app. 
 				if(!sap.ui.Device.system.desktop){
 				    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/mobile.css') );

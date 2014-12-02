@@ -5,10 +5,10 @@
 	<Page>
 		<content>
 		<List items = '{myAccounts>/accounts}' class='companyList'>
-		    <StandardListItem title='{myAccounts>accountName}' class="deskTopList" type='Navigation' press='navigateCompany'>
-		        
-		    </StandardListItem>
-		       
+		    <StandardListItem title='{myAccounts>accountName}' class="deskTopList" type='Navigation' press='navigateCompany'/>
+		    
+		    <!-- TODO figure out this custom control in XML -->
+            <!--<HoverList title='{myAccounts>accountName}' class="deskTopList" type='Navigation' press='navigateCompany' hover='companyHover'></HoverList>-->
 		    </List>
 		</content>
 	</Page>

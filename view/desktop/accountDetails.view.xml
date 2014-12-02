@@ -14,12 +14,12 @@
               <IconTabFilter
                 id="newsIcon"
                 icon="sap-icon://newspaper">
-                <Text text="Fragment will go here for the news reports" />
+                <core:Fragment fragmentName='fragments.NewsFragment' type='XML'/>
               </IconTabFilter>
               <IconTabFilter
                 id="finIcon"
                 icon="sap-icon://line-chart">
-                <Text text="Attachments go here ..." />
+                   <core:Fragment fragmentName='fragments.FinanceFragment' type='XML' />
               </IconTabFilter>
               
             </items>

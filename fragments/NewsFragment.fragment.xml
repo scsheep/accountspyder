@@ -1,0 +1,5 @@
+<Panel xmlns='sap.m'>
+    <content>
+        <Text text='im a fragment for news'></Text>
+    </content>
+</Panel>
