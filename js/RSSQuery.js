@@ -23,7 +23,7 @@ var RSSQuery = {
                             snippet:RSSQuery.removeHTMLTags(entry.contentSnippet)
                         });
                     }
-                    feedList.push(newModel)
+                    feedList.push(newModel);
                     companyModel.feedList = feedList;
                     sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModel),"companyModel" );
     	        }
