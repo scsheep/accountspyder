@@ -16,9 +16,13 @@
                 icon="sap-icon://newspaper">
                 <List items = "{companyModel>/feedList}">
                 <CustomListItem>
-                        <Panel expnadable='true' title="companyModel>title">
-                           <core:Fragment fragmentName='fragments.NewsFragment' type='XML'/> 
+                    <content>
+                        <Panel expandable='true' headerText="{companyModel>title}">
+                            <content>
+                                <core:Fragment fragmentName='fragments.NewsFragment' type='XML'/> 
+                           </content>
                         </Panel>
+                    </content>    
                     </CustomListItem>
                 </List>
                 

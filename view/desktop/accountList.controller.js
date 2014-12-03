@@ -6,14 +6,13 @@ sap.ui.controller("view.desktop.accountList", {
 * @memberOf accountSpyder.view.desktop.accountList
 */
 	onInit: function() {
-        var companyModelData = {name:'Diageo'};
-        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),'companyModel');
-        RSSQuery.findFeeds();
-console.log( sap.ui.getCore().getModel('companyModel'))
        
 	},
-navigateCompany:function(){
-      
+navigateCompany:function(evt){
+    var companyModelData = {}
+    companyModelData.name = evt.getSource().getBindingContext('myAccounts').getObject().accountName;
+    sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
+    RSSQuery.findFeeds();
     
 }
 
