@@ -14,7 +14,14 @@
               <IconTabFilter
                 id="newsIcon"
                 icon="sap-icon://newspaper">
-                <core:Fragment fragmentName='fragments.NewsFragment' type='XML'/>
+                <List items = "{companyModel>/feedList}">
+                <CustomListItem>
+                        <Panel expnadable='true' title="companyModel>title">
+                           <core:Fragment fragmentName='fragments.NewsFragment' type='XML'/> 
+                        </Panel>
+                    </CustomListItem>
+                </List>
+                
               </IconTabFilter>
               <IconTabFilter
                 id="finIcon"

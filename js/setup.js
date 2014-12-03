@@ -28,7 +28,6 @@
                 }
                 ]
         };
-	    
 	    var userModel = {
 	        firstName:"Sean",
             surname:"Campbell",

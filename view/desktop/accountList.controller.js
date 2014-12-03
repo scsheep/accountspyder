@@ -6,27 +6,15 @@ sap.ui.controller("view.desktop.accountList", {
 * @memberOf accountSpyder.view.desktop.accountList
 */
 	onInit: function() {
-        sap.m.StandardListItem.extend("HoverList", {
- 
-            // the control API:
-            metadata : {
-                events : {
-                    hover : {}
-                }
-            },
-            // the hover event handler:
-            onmouseover : function(evt) {   // is called when the Button is hovered - no event registration required
-                this.fireHover();
-            },
-
-            renderer : {}
-        });
-        
+        var companyModelData = {name:'Diageo'};
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),'companyModel');
+        RSSQuery.findFeeds();
+console.log( sap.ui.getCore().getModel('companyModel'))
+       
 	},
 navigateCompany:function(){
+      
     
-},
-companyHover:function(){
-    alert("hovered");
 }
+
 });
