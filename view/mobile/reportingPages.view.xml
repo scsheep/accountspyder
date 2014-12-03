@@ -1,0 +1,21 @@
+<core:View xmlns:core="sap.ui.core" 
+    xmlns:ui="sap.ui"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" controllerName="view.mobile.reportingPages" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+            <Carousel>
+            <pages>
+              <Page title='Blah'>
+                  
+              </Page>
+                
+                <Page title='Blah 2'>
+                    
+                </Page>
+            </pages>
+            </Carousel>		
+		</content>
+	</Page>
+</core:View>
