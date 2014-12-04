@@ -12,22 +12,26 @@ sap.ui.controller("view.desktop.accountList", {
     
     var companyModelData = {};
     companyModelData.name = "Diageo";
+    companyModelData.ticker = "DGE.L"
     sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
     RSSQuery.findFeeds();
+    Finance.getQuote();
     
 	},
+	
 navigateCompany:function(evt){
-    var applicationModelData = sap.ui.getCore().getModel('applicationModel').getData();
+    var applicationModelData = sap.ui.getCore().getModel("applicationModel").getData();
     var currentModel = sap.ui.getCore().getModel("companyModel").getData();
-    var name = evt.getSource().getBindingContext('myAccounts').getObject().accountName;
+    var name = evt.getSource().getBindingContext("myAccounts").getObject().accountName;
+    var ticker = evt.getSource().getBindingContext("myAccounts").getObject().ticker;
     var companyModelData = {};
    
-   console.log(applicationModelData);
     //Set the application model using the current companyModel this way we dont need to reload the rssfeeds if they are current. 
      currentModel.lastRead = new Date();
     applicationModelData.customers[currentModel.accountName] = currentModel
 
     companyModelData.name = name;
+    companyModelData.ticker = ticker;
     
     //check for the selected business name againszt the existing application model
     if(applicationModelData.customers[name] !== undefined && applicationModelData.customers[name].lastRead !== undefined){
@@ -43,6 +47,7 @@ navigateCompany:function(evt){
     sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(applicationModelData),"applicationModel");
     
 }, 
+
 addKeyterm:function(){
     var keyTerm = "swhitfield";
     RSSQuery.findFeeds(keyTerm);

@@ -32,7 +32,8 @@
               </IconTabFilter>
               <IconTabFilter
                 id="finIcon"
-                icon="sap-icon://line-chart">
+                icon="sap-icon://line-chart"
+                >
                    <core:Fragment fragmentName='fragments.FinanceFragment' type='XML' />
               </IconTabFilter>
               

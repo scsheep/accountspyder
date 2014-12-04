@@ -6,26 +6,52 @@
                     accountName:"Diageo",
                     pipeLineRemaining:15 ,
                     totalPipeline:10 ,
-                    lastWorked:"12/05/2014"
+                    lastWorked:"12/05/2014",
+                    ticker:"DGE.L"
                 },
                  {
                     accountName:"Mondelez",
                     pipeLineRemaining:20,
                     totalPipeline:21,
-                    lastWorked:"15/08/2014"
+                    lastWorked:"15/08/2014",
+                    ticker:"MDLZ"
                 },
-                 {
-                    accountName:"Acme Accounting",
-                    pipeLineRemaining:1,
-                    totalPipeline:7,
-                    lastWorked:"20/11/2014"
+                {
+                    accountName:"BP",
+                    pipeLineRemaining:20,
+                    totalPipeline:21,
+                    lastWorked:"15/08/2014",
+                    ticker:"BP.L"
                 },
-                 {
-                    accountName:"CompriseIT",
-                    pipeLineRemaining:0,
-                    totalPipeline:0,
-                    lastWorked:"25/11/2014"
+                {
+                    accountName:"Barclays",
+                    pipeLineRemaining:20,
+                    totalPipeline:21,
+                    lastWorked:"15/08/2014",
+                    ticker:"BARC.L"
+                },
+                {
+                    accountName:"Marks and Spencer",
+                    pipeLineRemaining:20,
+                    totalPipeline:21,
+                    lastWorked:"15/08/2014",
+                    ticker:"MKS.L"
+                },
+                {
+                    accountName:"Electrolux",
+                    pipeLineRemaining:20,
+                    totalPipeline:21,
+                    lastWorked:"15/08/2014",
+                    ticker:"ELUX-B.ST"
+                },
+                {
+                    accountName:"EC",
+                    pipeLineRemaining:20,
+                    totalPipeline:21,
+                    lastWorked:"15/08/2014",
+                    ticker:"ECM.L"
                 }
+                
                 ]
         };
 	    var userModel = {
