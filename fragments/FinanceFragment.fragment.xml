@@ -1,5 +1,54 @@
-<Panel xmlns='sap.m'>
-    <content>
-        <Text text='im a fragment for finance'></Text>
-    </content>
-</Panel>
+<VBox xmlns='sap.m'>
+    <items>
+        <!--top part will be the financial reports as per todays details -->
+        
+        
+        <!-- This section will be another Item Tab Showing Graphics four tabs 1 year , 1 quarter , 1 month and 1 week -->
+        <IconTabBar>
+                <items>
+                    <IconTabFilter
+                    text="1 Week">
+                        
+                    </IconTabFilter>
+                    
+                    <IconTabFilter
+                    text="1 Month">
+                        
+                    </IconTabFilter>
+                    
+                    <IconTabFilter
+                    text="Quarter">
+                        <IconTabBar>
+                            <items>
+                                 <IconTabFilter
+                                text="Q1">
+                                    
+                                </IconTabFilter>
+                                 <IconTabFilter
+                                text="Q2">
+                                    
+                                </IconTabFilter>
+                                 <IconTabFilter
+                                text="Q4">
+                                    
+                                </IconTabFilter>
+                                 <IconTabFilter
+                                text="Q5">
+                                    
+                                </IconTabFilter>
+                            </items>    
+                        </IconTabBar>
+                    </IconTabFilter>
+                    
+                    
+                    
+                    <IconTabFilter
+                    text="1 Year">
+                        
+                    </IconTabFilter>
+                    
+                
+                </items>
+            </IconTabBar>
+    </items>
+</VBox>
