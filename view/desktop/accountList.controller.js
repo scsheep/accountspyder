@@ -1,25 +1,23 @@
 sap.ui.controller("view.desktop.accountList", {
 
-/**
-* Called when a controller is instantiated and its View controls (if available) are already created.
-* Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-* @memberOf accountSpyder.view.desktop.accountList
-*/
 	onInit: function() {
-    //Create the application model 
+        //Create the application model 
         var data = {customers:{}};
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(data),"applicationModel");
-    
-    var companyModelData = {};
-    companyModelData.name = "Diageo";
-    companyModelData.ticker = "DGE.L";
-    companyModelData.finance = {
-        dataSheet:{},
-        historic:[]
-    };
-    sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
-    RSSQuery.findFeeds();
-    Finance.getQuote();
+        
+        var companyModelData = {};
+        companyModelData.name = "Diageo";
+        companyModelData.ticker = "DGE.L";
+        companyModelData.finance = {
+            dataSheet:{},
+            historic:[]
+        };
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
+        RSSQuery.findFeeds();
+        Finance.getQuote();
+        var dt = new Date();
+        dt.setMonth(dt.getMonth() - 1);
+        Finance.getHistoricData(dt);
 	},
 	
 navigateCompany:function(evt){
@@ -45,14 +43,19 @@ navigateCompany:function(evt){
     if(applicationModelData[name] !== undefined && applicationModelData[name].lastRead !== undefined){
         //TODO add an extra check here against the last read date this will keep it current instead of just loading once
         companyModelData = applicationModelData[name];
+        console.log(companyModelData)
     }else{
         //doesnt exist in the application model so we are going to load a fresh version of the RSS feeds. 
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
         RSSQuery.findFeeds(null);
         Finance.getQuote();
+        var dt = new Date();
+        dt.setMonth(dt.getMonth() - 1);
+        Finance.getHistoricData(dt);
     }
     
     
-    sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(applicationModelData),"applicationModel");
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(applicationModelData),"applicationModel");
+        console.log(sap.ui.getCore().getModel('applicationModel').getData());
 }
 });
