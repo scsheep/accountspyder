@@ -6,8 +6,8 @@ sap.ui.controller("view.mobile.reportingPages", {
 * @memberOf view.mobile.reportingPages
 */
 	onInit: function() {
-    console.log( sap.ui.getCore().getModel('companyModel'));
-    var companyModel = sap.ui.getCore().getModel('companyModel');
+    var companyModel = sap.ui.getCore().getModel("companyModel");
+    console.log(companyModel);
 	},
 
 /**

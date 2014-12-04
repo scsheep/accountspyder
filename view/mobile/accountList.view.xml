@@ -6,7 +6,7 @@
 		<content>
 		    <List items = '{myAccounts>/accounts}' class='companyList'>
 		    <CustomListItem type='Navigation' press='navigateCompany'>
-		        <Panel expandable="true" headerText="{myAccounts>accountName}" class="companyPanel">
+		        <Panel expandable="true" headerText="{myAccounts>accountName}" class="headerTextView">
 		            <VBox>
 		               <items>
 		                    <HBox>

@@ -1,0 +1,40 @@
+.newsDetails {
+    
+     margin-left: 20px;
+     text-align: justify;
+     text-indent: 10px;
+     font-size: 14px;
+     font-family:georgia;
+     
+}
+.headerText {
+    background: #9900CC; 
+    font-size: 24px;
+    
+}
+#__page1-intHeader {
+    background:#003366;
+    font-size: 24px;
+    font-family:georgia;
+    color:white;
+}
+
+#__page1-title {
+    color:white;
+}
+.sapMPanelHdr {
+    color:white;
+}
+#__page0-intHeader {
+    background: #003366; 
+    font-size: 24px;
+    
+}
+#__page0-title {
+    color:white;
+}
+.headerTextView {
+    background:  #003366; 
+    font-size: 24px;
+    
+}
