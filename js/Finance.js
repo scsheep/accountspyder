@@ -11,8 +11,8 @@ var Finance = {
         $.getJSON(realtimeQ, function (json) {
             companyModel.finance ={
                 dataSheet:json
-            }
-            sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModel),  "companyModel")
+            };
+            sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModel),  "companyModel");
         }); //end CallBack
     });//End Anon
     },
@@ -28,18 +28,20 @@ var Finance = {
         return number;
     }
     
+    startDate =  ""+startDate.getFullYear()+"-"+zeroIndex(startDate.getMonth()+1)+"-"+zeroIndex(startDate.getDate());   
+    
     //Assume end date will always be today    
     var endDate = new Date();    
-    endDate = ""+endDate.getFullYear()+"-"+zeroIndex(endDate.getMonth()+1)+"-"+zeroIndex(endDate.getDate())        
+    endDate = ""+endDate.getFullYear()+"-"+zeroIndex(endDate.getMonth()+1)+"-"+zeroIndex(endDate.getDate());        
         
     //this will be the historic data. Initial call will hit this to get first graph ???    
-    var yqlQuery = "select * from yahoo.finance.historicaldata where symbol = "+ticker+" and startDate = "+startDate+" and endDate = "+endDate
+    var yqlQuery = "select * from yahoo.finance.historicaldata where symbol = "+ticker+" and startDate = "+startDate+" and endDate = "+endDate;
     var queryURL = location.protocol+"//query.yahooapis.com/v1/public/yql?q="+yqlQuery;
     $(function(){
         $.getJSON(queryURL,function(json){
             console.log(json)
-        })
-    })
+        });
+    });
     
     }
     

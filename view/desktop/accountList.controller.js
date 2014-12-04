@@ -16,6 +16,9 @@ sap.ui.controller("view.desktop.accountList", {
     sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
     RSSQuery.findFeeds();
     Finance.getQuote();
+    var dt = new Date();
+    dt.setMonth(dt.getMonth()-1)
+    Finance.getHistoricData(dt)
     
 	},
 	
