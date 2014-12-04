@@ -9,8 +9,17 @@ sap.ui.controller("view.mobile.accountList", {
 	   
         
 	},
-	navigateCompany:function(){
-	
+	navigateCompany:function(evt){
+	    
+	    var itemClick = evt.getSource().getBindingContext("myAccounts").getObject();
+	    var companyModelData = {name:itemClick};
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),'companyModel');
+        RSSQuery.findFeeds();
+        
+	   //var companyModel = {companyName:itemClick};
+	   //RssQuery.getFeeds
+	    var app = sap.ui.getCore().byId("idApp");
+	    app.to("idreportingPage");
 	}
 
 

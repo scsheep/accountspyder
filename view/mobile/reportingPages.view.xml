@@ -3,19 +3,26 @@
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m" controllerName="view.mobile.reportingPages" 
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Title">
+	<Page title="News Feeds" showNavButton="true" navButtonPress="backPage">
 		<content>
-            <Carousel>
-            <pages>
-              <Page title='Blah'>
-                  
-              </Page>
-                
-                <Page title='Blah 2'>
+		    <List items = "{companyModel>/feedList}">
+                <CustomListItem>
+                <content>
                     
-                </Page>
-            </pages>
-            </Carousel>		
+                    <Panel expandable='true' headerText="{companyModel>title}">
+                            <!-- List items = companyModel>news of custom list items each containing title snippet and link for more. -->
+                            <List items = "{companyModel>news}">
+                                <CustomListItem>
+                                    <content>
+                                        <Text class='newsDetails' text="{companyModel>snippet}"/>
+                                    </content>
+                                </CustomListItem>
+                            </List>
+                        </Panel>
+                </content>
+                        
+                    </CustomListItem>
+                </List>
 		</content>
 	</Page>
 </core:View>

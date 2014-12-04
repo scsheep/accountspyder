@@ -7,7 +7,7 @@
                 <VBox>
                     <items>
                         <Text text="{companyModel>snippet}"></Text>
-                        <Link text="More..." src="{companyModel>link}"></Link>
+                        <Link text="More..." href="{companyModel>link}"></Link>
                     </items>
                 </VBox>
             </items>

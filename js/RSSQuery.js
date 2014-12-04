@@ -40,7 +40,7 @@ var RSSQuery = {
                         
                         newModel.news.push({
                             url:entry.url,
-                            favicon:"http://getfavicon.appspot.com/" + entry.link,
+                            favicon:location.protocol+"//getfavicon.appspot.com/" + entry.link,
                             title:RSSQuery.removeHTMLTags(entry.title),
                             link:entry.link,
                             snippet:RSSQuery.removeHTMLTags(entry.contentSnippet)

@@ -41,13 +41,13 @@
 		</VBox>
 		   
 		</content>
-			<!--<Footer>-->
-			<!--     <Toolbar>-->
-			<!--        <ToolbarSpacer/>-->
-			        <!--This button could have one of two functions, either we drive out of this with a list of predetermined, or allow free text ?? -->
-   <!--                 <Button text="Add Keyterm" press="addKeyterm"/>-->
-			<!--     </Toolbar>-->
-			<!--</Footer>-->
+			<footer>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <!-- This is either going to drive a freetext box or a list of predefined terms for news. Text box with suggestions preferable -->
+        <Button text="Add Term" press="addKeyterm" />
+      </Toolbar>
+    </footer>
 	</Page>
 
 </core:View>

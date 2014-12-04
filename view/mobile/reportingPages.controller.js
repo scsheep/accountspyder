@@ -5,9 +5,10 @@ sap.ui.controller("view.mobile.reportingPages", {
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf view.mobile.reportingPages
 */
-//	onInit: function() {
-//
-//	},
+	onInit: function() {
+    console.log( sap.ui.getCore().getModel('companyModel'));
+    var companyModel = sap.ui.getCore().getModel('companyModel');
+	},
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
@@ -33,6 +34,10 @@ sap.ui.controller("view.mobile.reportingPages", {
 */
 //	onExit: function() {
 //
-//	}
+//	},
+backPage:function() {
+        var app = sap.ui.getCore().byId("idApp");
+	    app.backToPage("idmobileMain");
+}
 
 });
