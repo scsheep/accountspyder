@@ -1,5 +1,16 @@
-<Panel xmlns='sap.m'>
-    <content>
-        <Text text='im a fragment for news'></Text>
-    </content>
-</Panel>
+<VBox xmlns='sap.m'>
+    <items>
+        <Text class='newsTitle' text='{companyModel>title}'></Text>
+        <HBox>
+            <items>
+                <Image class="newsIcon" src="{companyModel>favicon}" width="25px"></Image>
+                <VBox>
+                    <items>
+                        <Text text="{companyModel>snippet}"></Text>
+                        <Link text="More..." src="{companyModel>link}"></Link>
+                    </items>
+                </VBox>
+            </items>
+        </HBox>
+    </items>
+</VBox>

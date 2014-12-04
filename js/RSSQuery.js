@@ -1,7 +1,9 @@
 var RSSQuery = {
-    findFeeds:function() {		
+    findFeeds:function(keyWord) {
+         var companyModel = sap.ui.getCore().getModel("companyModel").getData();
+        if(keyWord === null || keyWord === undefined){
         //var userKeyWords = sap.ui.getCore().getModel("userModel").keyWords;
-        var companyModel = sap.ui.getCore().getModel("companyModel").getData();
+       
         var userKeywords = ['Merger','Sale','Financial'];
         var feedList = [];
         $(userKeywords).each(function(i){
@@ -10,28 +12,49 @@ var RSSQuery = {
                             title:userKeywords[i] +" News",
                             key:userKeywords[i],
                             news:[]
-              
-          }
-            google.feeds.findFeeds(keysearch, function(result) {
+          };
+        RSSQuery.googleIT(keysearch,newModel,feedList,companyModel);
+    
+          
+        });
+        companyModel.feedList = feedList;
+        //set the model
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModel),"companyModel" );
+        }else{
+               var newModel = {
+                            title:keyWord+" News",
+                            key:keyWord,
+                            news:[]
+          };
+         RSSQuery.googleIT(keyWord, newModel,companyModel.feedList,companyModel);
+          
+        }
+    
+
+    },
+    googleIT:function(keyWords,newModel,feedList,companyModel){
+        google.feeds.findFeeds(keyWords, function(result) {
                 if (!result.error) {
                     for (var i = 0; i < result.entries.length; i++) {
                         var entry = result.entries[i];
                         
                         newModel.news.push({
                             url:entry.url,
-                            favicon:location.protocol+"//s2.googleusercontent.com/s2/favicons?domain='" + entry.link + "'",
+                            favicon:"http://getfavicon.appspot.com/" + entry.link,
+                            title:RSSQuery.removeHTMLTags(entry.title),
+                            link:entry.link,
                             snippet:RSSQuery.removeHTMLTags(entry.contentSnippet)
                         });
                     }
+                    
                     feedList.push(newModel);
                     companyModel.feedList = feedList;
                     sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModel),"companyModel" );
+                    
     	        }
             }); 
-        });
-    
-
     },
+    
     removeHTMLTags:function(snippet){
         var cleanHTML = 
 			snippet.replace(/&(lt|gt);/g, function (strMatch, p1){

@@ -8,8 +8,7 @@
 		    <Text text='Company Summary to go here' height='35%'></Text>
 		    <IconTabBar
             class="iconTabBarPaddingTop"
-            id="idIconTabBarMulti"
-            >
+            id="idIconTabBarMulti">
             <items>
               <IconTabFilter
                 id="newsIcon"
@@ -19,7 +18,11 @@
                     <content>
                         <Panel expandable='true' headerText="{companyModel>title}">
                             <content>
-                                <core:Fragment fragmentName='fragments.NewsFragment' type='XML'/> 
+                                <List items='{companyModel>news}'>
+                                    <CustomListItem>
+                                        <core:Fragment fragmentName='fragments.NewsFragment' type='XML' />
+                                    </CustomListItem>                                        
+                                </List>
                            </content>
                         </Panel>
                     </content>    
@@ -38,5 +41,13 @@
 		</VBox>
 		   
 		</content>
+			<!--<Footer>-->
+			<!--     <Toolbar>-->
+			<!--        <ToolbarSpacer/>-->
+			        <!--This button could have one of two functions, either we drive out of this with a list of predetermined, or allow free text ?? -->
+   <!--                 <Button text="Add Keyterm" press="addKeyterm"/>-->
+			<!--     </Toolbar>-->
+			<!--</Footer>-->
 	</Page>
+
 </core:View>
