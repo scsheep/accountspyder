@@ -4,20 +4,6 @@ sap.ui.controller("view.desktop.accountList", {
         //Create the application model 
         var data = {customers:{}};
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(data),"applicationModel");
-        
-        var companyModelData = {};
-        companyModelData.name = "Diageo";
-        companyModelData.ticker = "DGE.L";
-        companyModelData.finance = {
-            dataSheet:{},
-            historic:[]
-        };
-        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
-        RSSQuery.findFeeds();
-        Finance.getQuote();
-        var dt = new Date();
-        dt.setMonth(dt.getMonth() - 1);
-        Finance.getHistoricData(dt);
 	},
 	
 navigateCompany:function(evt){
@@ -29,10 +15,8 @@ navigateCompany:function(evt){
    
     //Set the application model using the current companyModel this way we dont need to reload the rssfeeds if they are current. 
      currentModel.lastRead = new Date();
-     currentModel.finance = {
-         currentData:sap.ui.getCore().getModel("financeModel").getData(),
-         historicData:sap.ui.getCore().getModel("historicFinanceModel").getData()
-     };
+     currentModel.currentData = sap.ui.getCore().getModel("financeModel").getData()
+
     applicationModelData[currentModel.name] = currentModel;
 
     companyModelData.name = name;
@@ -41,9 +25,14 @@ navigateCompany:function(evt){
     
     //check for the selected business name againszt the existing application model
     if(applicationModelData[name] !== undefined && applicationModelData[name].lastRead !== undefined){
-        //TODO add an extra check here against the last read date this will keep it current instead of just loading once
+    
         companyModelData = applicationModelData[name];
-        console.log(companyModelData);
+        var financeModelData = companyModelData.finance.currentData;
+        var historicModelData = companyModelData.finance.historicData;
+        
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(financeModelData),"financeModel");
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel( historicModelData),"historicFinanceModel");
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
     }else{
         //doesnt exist in the application model so we are going to load a fresh version of the RSS feeds. 
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
@@ -54,7 +43,7 @@ navigateCompany:function(evt){
         Finance.getHistoricData(dt);
     }
     
-    
+        
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(applicationModelData),"applicationModel");
         console.log(sap.ui.getCore().getModel('applicationModel').getData());
 }

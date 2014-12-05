@@ -21,6 +21,23 @@
                 google.load("feeds", "1");
                 
                 function initialize() {
+                    //loading stuff for weekly etc 
+                            var companyModelData = {};
+        companyModelData.name = "Diageo";
+        companyModelData.ticker = "DGE.L";
+        companyModelData.finance = {
+            dataSheet:{},
+            historic:[]
+        };
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
+        RSSQuery.findFeeds();
+        //get todays details 
+        Finance.getQuote();
+        Finance.historicFinanceModel();
+        
+       
+                    
+
     	            sap.ui.localResources('view')
     	            sap.ui.localResources("fragments");  
     				//TODO : device based switch here will change between the split app or the app. 
