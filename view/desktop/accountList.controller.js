@@ -15,7 +15,8 @@ navigateCompany:function(evt){
    
     //Set the application model using the current companyModel this way we dont need to reload the rssfeeds if they are current. 
      currentModel.lastRead = new Date();
-     currentModel.currentData = sap.ui.getCore().getModel("financeModel").getData()
+     currentModel.currentData = sap.ui.getCore().getModel("financeModel").getData();
+     currentModel.historicData = sap.ui.getCore().getModel("historicFinanceModel").getData();
 
     applicationModelData[currentModel.name] = currentModel;
 
@@ -38,9 +39,7 @@ navigateCompany:function(evt){
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
         RSSQuery.findFeeds(null);
         Finance.getQuote();
-        var dt = new Date();
-        dt.setMonth(dt.getMonth() - 1);
-        Finance.getHistoricData(dt);
+        Finance.getHistoricData();
     }
     
         

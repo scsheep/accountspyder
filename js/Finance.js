@@ -34,7 +34,7 @@ var Finance = {
         var financeModelData = {
             filters:[]
         };
-        var financialModel = (sap.ui.getCore().getModel('financialModel') !== undefined) ? sap.ui.getCore().getModel(financialModel) : new sap.ui.model.json.JSONModel(financeModelData);
+        var financialModel = (sap.ui.getCore().getModel('historicFinancialModel') !== undefined) ? sap.ui.getCore().getModel('historicFinancialModel') : new sap.ui.model.json.JSONModel(financeModelData);
         
         //step through the data needed and create the correct dates
         for(var i in dataNeeded){
