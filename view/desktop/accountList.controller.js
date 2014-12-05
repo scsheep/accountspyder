@@ -43,7 +43,7 @@ navigateCompany:function(evt){
     if(applicationModelData[name] !== undefined && applicationModelData[name].lastRead !== undefined){
         //TODO add an extra check here against the last read date this will keep it current instead of just loading once
         companyModelData = applicationModelData[name];
-        console.log(companyModelData)
+        console.log(companyModelData);
     }else{
         //doesnt exist in the application model so we are going to load a fresh version of the RSS feeds. 
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
