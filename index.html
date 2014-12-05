@@ -44,9 +44,11 @@
     				if(!sap.ui.Device.system.desktop){
     				    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/mobile.css') );
     
-                        var app = new sap.m.App({initialPage:"idmobileMain"});
+                        var app = new sap.m.App('idApp',{initialPage:"idmobileMain"});
     				    var page = sap.ui.view({id:"idmobileMain", viewName:"view.mobile.accountList", type:sap.ui.core.mvc.ViewType.XML});
+    				    var page2 = sap.ui.view({id:"idreportingPage", viewName:"view.mobile.reportingPages", type:sap.ui.core.mvc.ViewType.XML});
     				    app.addPage(page);
+    				    app.addPage(page2);
     				    app.placeAt("content");
     				}else{
     				    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/desktop.css') );

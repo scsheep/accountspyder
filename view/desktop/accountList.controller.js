@@ -2,7 +2,7 @@ sap.ui.controller("view.desktop.accountList", {
 
 	onInit: function() {
         //Create the application model 
-        var data = {customers:{}};
+        var data = {};
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(data),"applicationModel");
 	},
 	
@@ -28,8 +28,8 @@ navigateCompany:function(evt){
     if(applicationModelData[name] !== undefined && applicationModelData[name].lastRead !== undefined){
     
         companyModelData = applicationModelData[name];
-        var financeModelData = companyModelData.finance.currentData;
-        var historicModelData = companyModelData.finance.historicData;
+        var financeModelData = companyModelData.currentData;
+        var historicModelData = companyModelData.historicData;
         
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(financeModelData),"financeModel");
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel( historicModelData),"historicFinanceModel");
@@ -39,7 +39,7 @@ navigateCompany:function(evt){
         sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
         RSSQuery.findFeeds(null);
         Finance.getQuote();
-        Finance.getHistoricData();
+        Finance.historicFinanceModel();
     }
     
         
