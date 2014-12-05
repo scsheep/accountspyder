@@ -13,36 +13,7 @@ var Finance = {
             }); //End CallBack
         });//End Anon
     },
-        
-        
-    getHistoricData:function(startDate,time){
-        var companyModel = sap.ui.getCore().getModel('companyModel').getData();
-        var ticker = companyModel.ticker;
-        
-        function zeroIndex(number){
-            number = parseInt(number,10);
-            if(number < 10){
-                number = "0"+number;
-            }
-            return number;
-        }
-        startDate =  ""+startDate.getFullYear()+"-"+zeroIndex(startDate.getMonth()+1)+"-"+zeroIndex(startDate.getDate());   
-       
-        //Assume end date will always be today    
-        var endDate = new Date();    
-        endDate = ""+endDate.getFullYear()+"-"+zeroIndex(endDate.getMonth()+1)+"-"+zeroIndex(endDate.getDate());        
-        
-        //this will be the historic data. Initial call will hit this to get first graph ???    
-        var yqlQuery = "select * from yahoo.finance.historicaldata where symbol = '"+ticker+"' and startDate = '"+startDate+"'and endDate = '"+endDate+"'";
-        var queryURL = location.protocol+"//query.yahooapis.com/v1/public/yql?q="+yqlQuery+"&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys";
-        $(function(){
-            $.getJSON(queryURL,function(json){
-                sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(json.query.results.quote),time);
-                return json.query.results.quote;
-             
-            });
-        });
-    },
+
     
     /**
      * 

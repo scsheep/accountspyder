@@ -7,14 +7,20 @@ sap.ui.controller("view.mobile.accountList", {
 */
 	onInit: function() {
 	   
-        
 	},
 	navigateCompany:function(evt){
 	    
 	    var itemClick = evt.getSource().getBindingContext("myAccounts").getObject();
-	    var companyModelData = {name:itemClick};
-        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),'companyModel');
+	    var companyModelData = {};
+        companyModelData.name = itemClick;
+        companyModelData.ticker = "DGE.L";
+        companyModelData.finance = {
+            dataSheet:{},
+            historic:[]
+        };
+        sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel(companyModelData),"companyModel");
         RSSQuery.findFeeds();
+       
 	   //var companyModel = {companyName:itemClick};
 	   //RssQuery.getFeeds
 	    var app = sap.ui.getCore().byId("idApp");
