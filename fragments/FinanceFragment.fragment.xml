@@ -1,9 +1,52 @@
-<VBox xmlns='sap.m'>
+<VBox xmlns='sap.m' xmlns:viztype="sap.viz.ui5.types" xmlns:viz="sap.viz.ui5" xmlns:v="sap.viz" xmlns:data="sap.viz.ui5.data">
     <items>
+        <HBox><items><Text text="Realtime Summary for "/><Text text="{financeModel>/Symbol}"/> <Text text="{financeModel>/ChangeinPercent}"></Text></items></HBox>
         <!--top part will be the financial reports as per todays details -->
-        
-        
+        <VBox>
+            <items>
+                <HBox><items><Text text="Open : "></Text><Text text="{financeModel>/Open}"></Text> <Text class="rightLabel" text="Market Cap : "></Text><Text text="{financeModel>/MarketCapitalization}"></Text></items></HBox>
+                <HBox><items><Text text="Days High : "></Text><Text text="{fianceModel>/DaysHigh}"></Text> <Text class="rightLabel" text="Days Low : "></Text><Text text="{financeModel>/DaysLow}"></Text></items></HBox>
+                <HBox><items><Text text="PE Ratio : "></Text><Text text="{financeModel>/PERatio}"></Text></items></HBox>
+            </items>
+        </VBox>
         <!-- This section will be another Item Tab Showing Graphics four tabs 1 year , 1 quarter , 1 month and 1 week -->
 
+        <IconTabBar
+            class="iconTabBarPaddingTop"
+            items="{historicFinanceModel>/filters}">
+            <items>
+                <IconTabFilter text="{historicFinanceModel>title}">
+                    <content>
+                        <VBox>
+                            <items>
+                                <HBox><items>
+                                    <!-- Graph of opens vs closes -->
+                                    <viz:Line id="xmlChart" defaultAggregation="title" width="100%" height="500px">
+								        <viz:title visible="true" text="Test" >
+									        <viztype:Title visible="true" text="Profit and Revenue By Country"> </viztype:Title>
+								        </viz:title>
+								        <v:dataset>  
+                                            <data:FlattenedDataset data="{historicFianceModel>/data}">  
+                                                <v:dimensions>  
+                                                     <data:DimensionDefinition axis="1" name="Date" value="{historicFinanceModel>Date}">  
+                                                     </data:DimensionDefinition>  
+                                                </v:dimensions>  
+                                                <v:measures>  
+                                                         <data:MeasureDefinition name="Opening" value="{historicFinanceModel>Open}">  
+                                                         </data:MeasureDefinition>  
+                                                </v:measures>  
+                                            </data:FlattenedDataset>  
+                                        </v:dataset>  
+							        </viz:Line>
+                                    <!-- Detail Panel to change on click -->
+                                    
+                                </items></HBox>
+                                
+                            </items>
+                        </VBox>
+                    </content>    
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
     </items>
 </VBox>

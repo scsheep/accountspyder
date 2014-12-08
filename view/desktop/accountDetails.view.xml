@@ -20,7 +20,7 @@
                             <content>
                                 <List items='{companyModel>news}'>
                                     <CustomListItem>
-                                        <core:Fragment fragmentName='fragments.NewsFragment' type='XML' />
+                                        <core:Fragment fragmentName='fragments.NewsFragment' type='XML'/>
                                     </CustomListItem>                                        
                                 </List>
                            </content>

@@ -1,5 +1,0 @@
-<VBox xlmns="sap.m">
-    <items>
-        <Text text="balls"></Text>
-    </items>
-</VBox>
