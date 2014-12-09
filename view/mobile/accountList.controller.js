@@ -6,7 +6,7 @@ sap.ui.controller("view.mobile.accountList", {
 * @memberOf accountSpyder.view.mobile.accountList
 */
 	onInit: function() {
-	   
+	  this.setIdentifiers();
 	},
 	navigateCompany:function(evt){
 	    
@@ -25,6 +25,17 @@ sap.ui.controller("view.mobile.accountList", {
 	   //RssQuery.getFeeds
 	    var app = sap.ui.getCore().byId("idApp");
 	    app.to("idreportingPage");
+	},
+	setIdentifiers:function(){
+	    //Little function to set the back ground colors based on pipeline algorithm 
+	    var myAccounts = sap.ui.gteCore().getModel('myAccounts').getData().accounts;
+	 
+	    $(myAccounts).each(function(i){
+	       // var account = myAccounts[i];
+	       // var pipeline = account.pipeLineRemaining;
+	       // var totalPipe = account.totalPipeline;
+	       // var lastWorked
+	    })
 	}
 
 
