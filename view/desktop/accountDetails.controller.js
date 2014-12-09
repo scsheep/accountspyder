@@ -8,6 +8,10 @@ sap.ui.controller("view.desktop.accountDetails", {
 //	onInit: function() {
 //
 //	},
+itemSelected:function(evt){
+    console.log(evt)
+    
+},
 addKeyterm:function(){
     console.log('triggered')
     var keyTerm = "swhitfield";

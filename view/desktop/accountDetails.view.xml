@@ -34,7 +34,7 @@
                 id="finIcon"
                 icon="sap-icon://line-chart"
                 >
-                   <core:Fragment fragmentName='fragments.FinanceFragment' type='XML' />
+                   <core:Fragment fragmentName='fragments.FinanceFragment' type='XML' controller="view.desktop.accountDetails" />
               </IconTabFilter>
               
             </items>

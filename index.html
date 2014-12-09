@@ -41,7 +41,7 @@
     	            sap.ui.localResources('view')
     	            sap.ui.localResources("fragments");  
     				//TODO : device based switch here will change between the split app or the app. 
-    				if(!sap.ui.Device.system.desktop){
+    				if($(window).height() < 500 || $(window).width < 400){
     				    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', '../css/mobile.css') );
     
                         var app = new sap.m.App('idApp',{initialPage:"idmobileMain"});

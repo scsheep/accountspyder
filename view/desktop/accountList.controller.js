@@ -13,7 +13,7 @@ navigateCompany:function(evt){
     var ticker = evt.getSource().getBindingContext("myAccounts").getObject().ticker;
     var companyModelData = {};
     
-     console.log(sap.ui.getCore().getModel('financeModel').getData());
+     console.log(sap.ui.getCore().getModel('historicFinanceModel').getData());
    
     //Set the application model using the current companyModel this way we dont need to reload the rssfeeds if they are current. 
      currentModel.lastRead = new Date();

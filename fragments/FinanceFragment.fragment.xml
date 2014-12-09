@@ -21,22 +21,29 @@
                             <items>
                                 <HBox><items>
                                     <!-- Graph of opens vs closes -->
-                                    <viz:Line id="xmlChart" defaultAggregation="title" width="100%" height="500px">
+                                    <viz:Line id="xmlChart" defaultAggregation="title" width="1000px" height="400px" selectData="itemSelected">
 								        <viz:title visible="true" text="Test" >
-									        <viztype:Title visible="true" text="Profit and Revenue By Country"> </viztype:Title>
+									        <viztype:Title visible="true" text="Daily Open Vs Close"> </viztype:Title>
 								        </viz:title>
-								        <v:dataset>  
-                                            <data:FlattenedDataset data="{historicFianceModel>/data}">  
-                                                <v:dimensions>  
-                                                     <data:DimensionDefinition axis="1" name="Date" value="{historicFinanceModel>Date}">  
-                                                     </data:DimensionDefinition>  
-                                                </v:dimensions>  
-                                                <v:measures>  
-                                                         <data:MeasureDefinition name="Opening" value="{historicFinanceModel>Open}">  
-                                                         </data:MeasureDefinition>  
-                                                </v:measures>  
+								         <viz:yAxis>
+                                            <viztype:Axis visible="true" hidden="false" />
+                                        </viz:yAxis>
+                                        <viz:xAxis>
+                                            <viztype:Axis visible="true" hideSubLevels="true"/>
+                                        </viz:xAxis>
+							            <viz:dataset>  
+                                           <data:FlattenedDataset data="{historicFinanceModel>data}">
+                                                <data:dimensions>  
+                                                    <data:DimensionDefinition axis="1" name="Date" value="{Date}"> </data:DimensionDefinition> 
+                                                </data:dimensions>
+                                                <data:measures>  
+                                                    <data:MeasureDefinition name='Open' value='{Open}'></data:MeasureDefinition>
+                                                    <!--<data:MeasureDefinition name='High' value='{High}'></data:MeasureDefinition>-->
+                                                    <!--<data:MeasureDefinition name='Low' value='{Low}'></data:MeasureDefinition>-->
+                                                    <!-- <data:MeasureDefinition name='Close' value='{Close}'></data:MeasureDefinition>-->
+                                                </data:measures> 
                                             </data:FlattenedDataset>  
-                                        </v:dataset>  
+                                        </viz:dataset>  
 							        </viz:Line>
                                     <!-- Detail Panel to change on click -->
                                     
