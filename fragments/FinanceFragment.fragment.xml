@@ -21,7 +21,7 @@
                             <items>
                                 <HBox><items>
                                     <!-- Graph of opens vs closes -->
-                                    <viz:Line id="xmlChart" defaultAggregation="title" width="1000px" height="400px" selectData="itemSelected">
+                                    <viz:Line id="xmlChart" defaultAggregation="title" width="600px" height="300px" selectData="itemSelected">
 								        <viz:title visible="true" text="Test" >
 									        <viztype:Title visible="true" text="Daily Open Vs Close"> </viztype:Title>
 								        </viz:title>
